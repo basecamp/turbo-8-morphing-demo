@@ -1,3 +1,7 @@
+<% @projects.each do |project| %>
+  <%= turbo_stream_from project %>
+<% end %>
+
 <h1 class="title">
   You have <span><%= @projects.count %> </span> projects:
 </h1>
