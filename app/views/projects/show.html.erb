@@ -11,27 +11,8 @@
 </nav>
 
 <%= render "projects/header", project: @project %>
+<%= render "projects/add_task_form", project: @project %>
+<%= render "projects/tasks", project: @project, tasks: @tasks %>
 
-<table class="table is-fullwidth is-stripped">
-  <thead>
-  <tr>
-    <th style="width: 4rem;"></th>
-    <th>Name</th>
-  </tr>
-  </thead>
-
-  <%= render partial: "projects/task", locals: { project: @project }, collection: @project.tasks %>
-
-  <tfoot>
-  <tr>
-    <th>
-      <span class="tag is-info"><%= @project.tasks.completed.count %>
-        / <%= @project.tasks.count %> </span>
-    </th>
-    <th>
-    </th>
-  </tr>
-  </tfoot>
-</table>
 
 
