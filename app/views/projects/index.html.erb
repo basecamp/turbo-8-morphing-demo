@@ -2,7 +2,9 @@
   You have <span><%= @projects.count %> </span> projects:
 </h1>
 
-<table class="table is-bordered is-fullwidth is-stripped">
+<%= render "projects/add_project_form" %>
+
+<table class="table is-fullwidth is-stripped">
   <tr>
     <th>Name</th>
     <th>Completion</th>
@@ -10,5 +12,3 @@
 
   <%= render partial: "projects/project", collection: @projects %>
 </table>
-
-<%= link_to "New project", new_project_path %>
