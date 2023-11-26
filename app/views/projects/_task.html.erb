@@ -1,4 +1,4 @@
-<tr id="<%= dom_id task %>">
+<tr id="<%= dom_id task %>" class="task">
   <td>
     <%= form_with model: [ project, task ], data: { controller: "form" } do |form| %>
       <%= form.label :completed, class: "checkbox", for: dom_id(task, :completed) do %>
@@ -6,7 +6,7 @@
       <% end %>
     <% end %>
   </td>
-  <td>
+  <td class="<%= 'task--completed' if task.completed? %>">
     <%= task.title %>
   </td>
 </tr>
