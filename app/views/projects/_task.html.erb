@@ -9,4 +9,7 @@
   <td class="<%= 'task--completed' if task.completed? %>">
     <%= task.title %>
   </td>
+  <td class="is-right">
+    <%= button_to "Delete", [project, task], class: "button is-danger is-light", method: :delete %>
+  </td>
 </tr>
