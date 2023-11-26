@@ -219,7 +219,7 @@ GEM
     stringio (3.0.9)
     thor (1.3.0)
     timeout (0.4.1)
-    turbo-rails (1.5.0)
+    turbo-rails (2.0.0.pre.beta.1)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
       railties (>= 6.0.0)
@@ -257,7 +257,7 @@ DEPENDENCIES
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
-  turbo-rails
+  turbo-rails (= 2.0.0.pre.beta.1)
   tzinfo-data
   web-console
 
