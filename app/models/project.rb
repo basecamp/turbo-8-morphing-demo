@@ -1,6 +1,8 @@
 class Project < ApplicationRecord
   has_many :tasks, dependent: :destroy
 
+  validates :name, presence: true
+
   def completed?
     tasks.pending.none?
   end
