@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render "projects/header", project: @project %>
 
 <table class="table is-fullwidth is-stripped">
@@ -10,7 +8,7 @@
   </tr>
   </thead>
 
-  <%= render partial: "projects/task", collection: @project.tasks %>
+  <%= render partial: "projects/task", locals: { project: @project }, collection: @project.tasks %>
 
   <tfoot>
   <tr>
