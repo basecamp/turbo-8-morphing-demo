@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.task--completed {
+    text-decoration: line-through;
+}
