@@ -1,14 +1,16 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Projects</h1>
+<h1 class="title">
+  You have <span><%= @projects.count %> </span> projects:
+</h1>
 
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
-  <% end %>
-</div>
+<table class="table is-bordered is-fullwidth is-stripped">
+  <tr>
+    <th>Name</th>
+    <th>Completion</th>
+  </tr>
+
+  <%= render partial: "projects/project", collection: @projects %>
+</table>
 
 <%= link_to "New project", new_project_path %>
