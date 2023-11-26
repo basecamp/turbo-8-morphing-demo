@@ -1,5 +1,4 @@
-
-<table class="table is-fullwidth is-stripped">
+<table id="tasks" class="table is-fullwidth is-stripped">
   <thead>
   <tr>
     <th style="width: 4rem;"></th>
@@ -13,8 +12,7 @@
   <tfoot>
   <tr>
     <th>
-      <span class="tag is-info"><%= tasks.completed.count %>
-        / <%= tasks.count %> </span>
+      <%= render "projects/complete_count", project: project %>
     </th>
     <th>
     </th>
