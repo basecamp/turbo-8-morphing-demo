@@ -17,6 +17,11 @@
   </div>
 
   <div>
+    <%= form.label :completed, style: "display: block" %>
+    <%= form.check_box :completed %>
+  </div>
+
+  <div>
     <%= form.label :project_id, style: "display: block" %>
     <%= form.text_field :project_id %>
   </div>

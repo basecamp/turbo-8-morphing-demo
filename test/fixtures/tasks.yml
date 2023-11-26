@@ -2,8 +2,10 @@
 
 one:
   title: MyString
+  completed: false
   project: one
 
 two:
   title: MyString
+  completed: false
   project: two

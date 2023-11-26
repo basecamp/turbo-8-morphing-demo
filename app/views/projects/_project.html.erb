@@ -1,7 +1,9 @@
-<div id="<%= dom_id project %>">
-  <p>
-    <strong>Name:</strong>
-    <%= project.name %>
-  </p>
+<tr id="<%= dom_id project %>">
+  <td>
+    <%= link_to project.name, project %>
+  </td>
 
-</div>
+  <td>
+    <progress class="progress is-primary" value="<%= project.tasks.completed.count %>" max="<%= project.tasks.count %>">15%</progress>
+  </td>
+</tr>
