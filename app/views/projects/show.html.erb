@@ -1,3 +1,15 @@
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li>
+      <%= link_to "Project", projects_path %>
+    </li>
+    <li class="is-active">
+
+      <%= link_to @project.name, project_path(@project) %>
+    </li>
+  </ul>
+</nav>
+
 <%= render "projects/header", project: @project %>
 
 <table class="table is-fullwidth is-stripped">
@@ -13,7 +25,8 @@
   <tfoot>
   <tr>
     <th>
-      <span class="tag is-info"><%= @project.tasks.completed.count %> / <%= @project.tasks.count %> </span>
+      <span class="tag is-info"><%= @project.tasks.completed.count %>
+        / <%= @project.tasks.count %> </span>
     </th>
     <th>
     </th>
