@@ -1,10 +1,32 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @project %>
+<h1 class="title">
+  <%= @project.name %>
+</h1>
 
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
+<%= project_progress_bar_for(@project) %>
 
-  <%= button_to "Destroy this project", @project, method: :delete %>
+
+<div class="level">
+  <div class="level-left">
+    <div class="level-item">
+      <span class="tag is-info"><%= @project.tasks.completed.count %> / <%= @project.tasks.count %> </span>
+    </div>
+  </div>
+
+  <div class="level-right">
+    <div class="level-item">
+      <%= button_to "Destroy this project", @project, class: "button is-danger", method: :delete %>
+    </div>
+  </div>
 </div>
+
+<table class="table is-bordered is-fullwidth is-stripped">
+  <tr>
+    <th>Name</th>
+  </tr>
+
+  <%= render partial: "projects/task", collection: @project.tasks %>
+</table>
+
+

@@ -4,6 +4,6 @@
   </td>
 
   <td>
-    <progress class="progress is-primary" value="<%= project.tasks.completed.count %>" max="<%= project.tasks.count %>">15%</progress>
+    <%= project_progress_bar_for(project) %>
   </td>
 </tr>
