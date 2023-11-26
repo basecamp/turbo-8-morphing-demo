@@ -8,7 +8,7 @@
   <div class="level-left"></div>
   <div class="level-right">
     <div class="level-item">
-      <%= button_to "Destroy this project", project, class: "button is-danger", method: :delete %>
+      <%= button_to "Destroy this project", project, class: "button is-danger", method: :delete, data: { turbo_confirm: ("There are uncompleted tasks. Are you sure?" unless project.completed?) } %>
     </div>
   </div>
 </div>
