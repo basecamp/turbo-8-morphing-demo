@@ -17,21 +17,15 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = Project.create! project_params
 
-    if @project.save
-      redirect_to project_url(@project), notice: "Project was successfully created."
-    else
-      render :new, status: :unprocessable_entity
-    end
+    redirect_to project_url(@project), notice: "Project was successfully created."
   end
 
   def update
-    if @project.update(project_params)
-      redirect_to project_url(@project), notice: "Project was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
-    end
+    @project.update project_params
+
+    redirect_to project_url(@project), notice: "Project was successfully updated."
   end
 
   def destroy
