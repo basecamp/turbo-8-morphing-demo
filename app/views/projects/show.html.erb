@@ -2,12 +2,25 @@
 
 <%= render "projects/header", project: @project %>
 
-<table class="table is-bordered is-fullwidth is-stripped">
+<table class="table is-fullwidth is-stripped">
+  <thead>
   <tr>
+    <th style="width: 4rem;"></th>
     <th>Name</th>
   </tr>
+  </thead>
 
   <%= render partial: "projects/task", collection: @project.tasks %>
+
+  <tfoot>
+  <tr>
+    <th>
+      <span class="tag is-info"><%= @project.tasks.completed.count %> / <%= @project.tasks.count %> </span>
+    </th>
+    <th>
+    </th>
+  </tr>
+  </tfoot>
 </table>
 
 
