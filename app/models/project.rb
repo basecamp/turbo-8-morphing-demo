@@ -3,6 +3,8 @@ class Project < ApplicationRecord
 
   validates :name, presence: true
 
+  broadcasts_refreshes
+
   def completed?
     tasks.pending.none?
   end
