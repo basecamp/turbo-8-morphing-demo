@@ -25,7 +25,10 @@ class TasksController < ApplicationController
   def update
     @task.update! task_params
 
-    redirect_to project_url(@project), notice: "Task was successfully updated."
+    respond_to do |format|
+      format.html { redirect_to project_url(@project), notice: "Task was successfully updated." }
+      format.turbo_stream
+    end
   end
 
   def destroy
