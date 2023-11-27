@@ -8,5 +8,6 @@ You can check three branches to see how the code looks like:
 - [Use stream action to enhance updating tasks](https://github.com/basecamp/turbo-8-morphing-demo/pull/5).
 - [Use page refreshes to enhance all the interactions](https://github.com/basecamp/turbo-8-morphing-demo/pull/4).
 
-[Learn more about Page refreshes in Turbo 8](https://dev.37signals.com/a-happier-happy-path-in-turbo-with-morphing/).
+You can also read [the companion blog post](https://dev.37signals.com/page-refreshes-with-morphing-demo/) and
+[the original announcement](https://dev.37signals.com/a-happier-happy-path-in-turbo-with-morphing/) to learn more about the new system.
 
