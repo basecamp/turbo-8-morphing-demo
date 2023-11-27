@@ -1,0 +1,13 @@
+<%= turbo_stream.replace dom_id(task) do %>
+  <%= render "projects/task", project: project, task: task %>
+<% end %>
+
+<%= turbo_stream.replace dom_id(project, :progress_bar) do %>
+  <%= project_progress_bar_for(project) %>
+<% end %>
+
+<%= turbo_stream.replace dom_id(project, :complete_count) do %>
+  <%= render "projects/complete_count", project: project %>
+<% end %>
+
+
