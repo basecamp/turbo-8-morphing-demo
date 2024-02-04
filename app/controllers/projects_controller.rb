@@ -7,6 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @tasks = @project.tasks.order(id: :desc)
+    @projects = Project.all
   end
 
   def new
@@ -19,7 +20,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.create! project_params
 
-    redirect_to project_url(@project), notice: "Project was successfully created."
+    redirect_back(fallback_location: projects_url)
   end
 
   def update

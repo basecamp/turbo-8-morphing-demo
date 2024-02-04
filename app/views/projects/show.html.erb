@@ -1,19 +1,27 @@
 <%= turbo_stream_from @project %>
 
-<nav class="breadcrumb" aria-label="breadcrumbs">
-  <ul>
-    <li>
-      <%= link_to "Project", projects_path %>
-    </li>
-    <li class="is-active">
-      <%= link_to @project.name, project_path(@project) %>
-    </li>
-  </ul>
-</nav>
+<div class="flex" data-controller="url">
+  <turbo-frame class="w-[400px] h-screen overflow-y-auto" target="project" data-controller="turbo-frame-history">
+    <%= render 'projects' %>
+  </turbo-frame>
 
-<%= render "projects/header", project: @project %>
-<%= render "projects/add_task_form", project: @project %>
-<%= render "projects/tasks", project: @project, tasks: @tasks %>
+  <turbo-frame id="project" class="flex-1 ml-6">
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul>
+        <li>
+          <%= link_to "Project", projects_path %>
+        </li>
+        <li class="is-active">
+          <%= link_to @project.name, project_path(@project) %>
+        </li>
+      </ul>
+    </nav>
+
+    <%= render "projects/header", project: @project %>
+    <%= render "projects/add_task_form", project: @project %>
+    <%= render "projects/tasks", project: @project, tasks: @tasks %>
+  </turbo-frame>
+</div>
 
 
 
